@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ServiceInterface {
     List<?> getAll();
-    Object getOne(Object o);
+    Object getOne(int id);
     void save();
 
     void update(Object o, int id);

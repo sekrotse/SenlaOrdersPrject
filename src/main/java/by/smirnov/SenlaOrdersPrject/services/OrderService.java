@@ -1,19 +1,30 @@
 package by.smirnov.SenlaOrdersPrject.services;
 
+import by.smirnov.SenlaOrdersPrject.dao.OrderRepository;
+import by.smirnov.SenlaOrdersPrject.models.Order;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class OrderService implements ServiceInterface{
-    @Override
-    public List<?> getAll() {
-        return null;
+
+    private final OrderRepository orderRepository;
+
+    @Autowired
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
     }
 
     @Override
-    public Object getOne(Object o) {
-        return null;
+    public List<?> getAll() {
+        return orderRepository.findAll();
+    }
+
+    @Override
+    public Object getOne(int id) {
+        return orderRepository.findById(id);
     }
 
     @Override
