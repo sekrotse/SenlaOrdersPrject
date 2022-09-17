@@ -5,10 +5,11 @@ import by.smirnov.SenlaOrdersPrject.models.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
-public class OrderService implements ServiceInterface{
+public class OrderService implements ServiceInterface {
 
     private final OrderRepository orderRepository;
 
@@ -28,8 +29,8 @@ public class OrderService implements ServiceInterface{
     }
 
     @Override
-    public void save() {
-
+    public void save(Order order) {
+orderRepository.delete();
     }
 
     @Override
@@ -39,6 +40,6 @@ public class OrderService implements ServiceInterface{
 
     @Override
     public void delete(int id) {
-
+        orderRepository.deleteAllById(Collections.singleton(id));
     }
 }
