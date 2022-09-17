@@ -1,0 +1,13 @@
+package by.smirnov.SenlaOrdersPrject;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SenlaOrdersPrjectApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
